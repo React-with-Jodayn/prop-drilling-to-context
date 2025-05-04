@@ -67,8 +67,6 @@ function App() {
             }
           />
           <Route path="/Posts" element={<Posts />} />
-          {/* postId هون كانت كابيتال وهناك حطيتها سمول هالمطي ابن القرده جنني هون وما رضي يشتغل وبالاخر كل المشكلة ب  */}
-          {/* بس يلا هيك منتعلم انهم مربوط ين ببعض*/}
           <Route path="/PostDetails/:postId" element={<PostDetails />} />
           <Route
             path="*"

@@ -8,7 +8,9 @@ export default function Posts() {
     return (
       <Link to={`/PostDetails/${index + 1}`} key={index}>
         <div style={{ margin: "3px", border: "1px solid black" }}>
-          <h1>{post.title}</h1>
+          <h1 className="bg-gradient-to-r from-amber-500    to-amber-950  text-slate-400">
+            {post.title}
+          </h1>
         </div>
       </Link>
     );
