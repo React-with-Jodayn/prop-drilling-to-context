@@ -7,6 +7,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import Posts from "./Posts";
 import PostDetails from "./PostDetails";
 import { PostContext } from "./contexts/PostsContext";
+import PostLayout from "./PostLayout";
 
 function App() {
   const PostsList: { title: string; description: string }[] = [
@@ -30,14 +31,6 @@ function App() {
           <Link to="/">Home</Link>| <Link to="/scratch">scratch url</Link> |
           <Link to="/Posts">Posts</Link>{" "}
         </nav>
-        <div className="card">
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
         <Routes>
           <Route path="/" element={<></>} />
           <Route
@@ -66,8 +59,12 @@ function App() {
               </InfoContext.Provider>
             }
           />
-          <Route path="/Posts" element={<Posts />} />
-          <Route path="/PostDetails/:postId" element={<PostDetails />} />
+          <Route path="/Posts">
+            <Route index element={<Posts />} />
+            <Route element={<PostLayout />}>
+              <Route path="PostDetails/:postId" element={<PostDetails />} />
+            </Route>
+          </Route>
           <Route
             path="*"
             element={
