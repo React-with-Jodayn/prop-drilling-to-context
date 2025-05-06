@@ -8,7 +8,7 @@ type componentProps = {
 };
 export default function MyComponent2({ img1, img2, header }: componentProps) {
   return (
-    <div style={{ background: "red" }}>
+    <div className="bg-amber-600">
       <h1>{header}</h1>
       <a href={img1} target="_blank">
         <img src={viteLogo} className="logo" alt="Vite logo" />
